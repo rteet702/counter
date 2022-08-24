@@ -10,10 +10,22 @@
 <body>
     <div class="container">
         <h1 class="text-center">Counter</h1>
+        <h2 class="text-center">View Counter</h2>
+        <p class="text-center">{{ view_counter }}</p>
+        <h2 class="text-center">Button Counter</h2>
         <p class="text-center">{{ counter }}</p>
         <div class="container d-flex align-items-center justify-content-center">
-            <form action="/" method="get">
-                <input type="submit" value="Click" class="btn btn-primary m-3">
+            <form action="plus_one" method="post">
+                <input type="submit" value="+1" class="btn btn-primary m-3">
+            </form>
+            <form action="/plus_two" method="post">
+                <input type="submit" value="+2" class="btn btn-primary m-3">
+            </form>
+            <form action="/plus_x" method="post">
+                <div class="input-group">
+                    <input type="number" class="form-control" name="increment_amount" value="{{ inc_amount }}" placeholder="Increment by #">
+                    <button type="submit" class="btn btn-secondary" id="input-group-button-right">+x</button>
+                </div>
             </form>
             <form action="/destroy_session" method="post">
                 <input type="submit" value="Clear" class="btn btn-danger m-3">
